@@ -1,7 +1,6 @@
 package com.engeto;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,26 +8,29 @@ import java.util.Scanner;
 
 public class Loading {
 
-    private List<Countries> countriesList;
+    private List<State> countriesList;
 
     public void loadFile(String filename) throws ExceptionEu {
-        try {
-            Scanner scanner = new Scanner(new BufferedReader(new FileReader(filename)));
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(filename)))){
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                this.addCountry(Countries.parse(line));
+                try {
+                    this.addCountry(State.parse(line));
+                } catch (Exception e){
+                    throw new ExceptionEu("Nečitelný řádek");
+                }
             }
         } catch (Exception e) {
-            throw new ExceptionEu("Chyba při načtení");
+            throw new ExceptionEu("Chyba při načtení vstupního souboru");
         }
     }
 
-    public void addCountry(Countries countries){
+    public void addCountry(State countries){
         countriesList.add(countries);
     }
 
-    public List<Countries> getAllCountries() {
+    public List<State> getAllCountries() {
         return new ArrayList<>(countriesList);
     }
 }
