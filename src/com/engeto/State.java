@@ -22,10 +22,11 @@ public class State {
         return country + " ("+shortcut+"): "+ fullTaxValue +"%";
     }
 
-    public static State parse(String text) throws ExceptionEu {
+   /* public static State parse(String text) throws ExceptionEu {
         try {
 
             String[] items = text.split("/t");
+
             String shortcut = items[0];
             String country = items[1];
             double fullTax = Double.parseDouble(items[2]);
@@ -37,12 +38,13 @@ public class State {
             boolean specialRate = Boolean.parseBoolean(items[4]);
 
             return new State(shortcut, country, fullTax, reducedTaxValue, specialRate);
+
         } catch (NumberFormatException ex){
             throw new ExceptionEu("Nelze správně rozložit soubor");
         }
     }
 
-
+    */
 
 
 
@@ -85,6 +87,10 @@ public class State {
     }
 
     public void setSpecialRate(boolean specialRate) {
+        this.specialRate = specialRate;
+    }
+
+    public void getSpecialRate(boolean specialRate) {
         this.specialRate = specialRate;
     }
 

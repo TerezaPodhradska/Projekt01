@@ -2,18 +2,20 @@ package com.engeto;
 
 public class Main {
     public static final String FILENAME = "vat–eu.csv";
+    public static final String DELIMETR =  "/t";
 
     public static void main(String[] args) {
-        Loading country = new Loading();
+        Loading loading = new Loading();
         try {
-            country.loadFile(FILENAME);
+            loading.loadFromFile(FILENAME, DELIMETR);
 
-         for (State country1 : country.getAllCountries()) {
-         System.out.println(country1.getDescription());
-         }
+        } catch (Exception e){
+            System.out.println("Špatný soubot k nahrání!");;
+        }
+        System.out.println("Název země (zkratka): základní sazba %" );
 
-        } catch (ExceptionEu e){
-            e.printStackTrace();
+        for (State country : loading.getAllCountries()) {
+            System.out.println(country.getDescription());
         }
     }
 }
