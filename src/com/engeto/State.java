@@ -22,32 +22,12 @@ public class State {
         return country + " ("+shortcut+"): "+ fullTaxValue +"%";
     }
 
-   /* public static State parse(String text) throws ExceptionEu {
-        try {
-
-            String[] items = text.split("/t");
-
-            String shortcut = items[0];
-            String country = items[1];
-            double fullTax = Double.parseDouble(items[2]);
-            String item3 = items[3];
-            if (item3.contains(",")) {
-                item3.replace(",", ".");
-            }
-            double reducedTaxValue = Double.parseDouble(item3);
-            boolean specialRate = Boolean.parseBoolean(items[4]);
-
-            return new State(shortcut, country, fullTax, reducedTaxValue, specialRate);
-
-        } catch (NumberFormatException ex){
-            throw new ExceptionEu("Nelze správně rozložit soubor");
-        }
+    public String getDescriptionOver20(){
+        return country + " ("+shortcut+"): "+ fullTaxValue +"%" +" (" +reducedTaxValue + "%)";
     }
-
-    */
-
-
-
+    public String getDescriptionUndere20(){
+        return shortcut+", ";
+    }
 
     //GETTER AND SETTER
     public String getShortcut() {
