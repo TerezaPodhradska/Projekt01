@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 9d4a9c18177cb19fbb11447862058037926bd664 TerezaPodhradska <podhradskaterezaa@gmail.com> 1647381766 +0100	commit (initial): 01- načtení souboru
+9d4a9c18177cb19fbb11447862058037926bd664 cfbac0ba83f5fa70234c2d9d526a612060f62de3 TerezaPodhradska <podhradskaterezaa@gmail.com> 1647462804 +0100	commit: První práce na projektu
+cfbac0ba83f5fa70234c2d9d526a612060f62de3 cfbac0ba83f5fa70234c2d9d526a612060f62de3 TerezaPodhradska <podhradskaterezaa@gmail.com> 1647464464 +0100	Branch: renamed refs/heads/master to refs/heads/main
+cfbac0ba83f5fa70234c2d9d526a612060f62de3 6550cc6f681588957bfe025480c0d295db4f80df TerezaPodhradska <podhradskaterezaa@gmail.com> 1647466850 +0100	commit: 02- práce na nahrání souboru
+6550cc6f681588957bfe025480c0d295db4f80df d42af70e59db83c31b9f1d108ba9b9bd469c7259 TerezaPodhradska <podhradskaterezaa@gmail.com> 1647505579 +0100	commit: práce na nahrávání souboru + saveToFile
+d42af70e59db83c31b9f1d108ba9b9bd469c7259 781018f1a4c86d11387efbcea1d4f0cb6ee098ca TerezaPodhradska <podhradskaterezaa@gmail.com> 1647600569 +0100	commit: rozdělení státu na vat over a under 20, zapsání do souboru

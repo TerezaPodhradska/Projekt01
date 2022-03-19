@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "orgin"]
+	url = https://github.com/TerezaPodhradska/Projekt01.git
+	fetch = +refs/heads/*:refs/remotes/orgin/*
+[remote "origin"]
+	url = git@github.com:TerezaPodhradska/Projekt01.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
