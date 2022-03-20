@@ -76,11 +76,14 @@ public class Main {
         }
         //nahraje výpis do nového souboru
         String fileXName = "vat-over-"+minVatValueString+".txt";
-        FileWriter writerX = new FileWriter(fileXName);
-        for(String state: statesOverX) {
-            writerX.write(state + System.lineSeparator());
+        try (FileWriter writerX = new FileWriter(fileXName)) {
+            for (String state : statesOverX) {
+                writerX.write(state + System.lineSeparator());
+            }
+            writerX.close();
+            System.out.println("Jméno souboru, ve kterém se státy nacházejí: " + fileXName);
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        writerX.close();
-        System.out.println("Jméno souboru, ve kterém se státy nacházejí: "+fileXName);
     }
 }
