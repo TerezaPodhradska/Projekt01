@@ -6,21 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+
+public class Mainn {
     public static final String FILENAME = "vat–eu.csv";
     public static final String DELIMITER =  "\t";
 
     public static void main(String[] args) throws IOException {
 
         // projde soubor a vytiskne všechny státy
-        Loading loading = new Loading();
+        Loading02 loading = new Loading02();
         try {
             loading.loadFromFile(FILENAME, DELIMITER);
         } catch (Exception e){
             System.out.println("Špatný soubot k nahrání!"+ e.getLocalizedMessage());
         }
         System.out.println("Název země (zkratka): základní sazba %" );
-        for (State country : loading.getAllCountries()) {
+        for (State02 country : loading.getAllCountries()) {
             System.out.println(country.getDescription());
         }
 
@@ -29,7 +30,7 @@ public class Main {
         System.out.println("Sazba VAT 20+% a nepoužívají specialní sazbu");
         loading.compareTo();
         List<String> statesOver20 = new ArrayList<>();
-        for (State country : loading.getAllCountries()) {
+        for (State02 country : loading.getAllCountries()) {
             if ((country.getFullTAxValue() > 20)&& (!country.isSpecialRate())) {
                 System.out.println(country.getDescriptionOver20());
                 statesOver20.add(country.getDescriptionOver20());
@@ -39,9 +40,9 @@ public class Main {
         statesOver20.add("==================================");
         statesOver20.add("Sazba VAT nižší než 20% nebo používají speciální sazbu: ");
         System.out.println("Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: ");
-        for (State country : loading.getAllCountries()) {
+        for (State02 country : loading.getAllCountries()) {
             if ((country.getFullTAxValue() <= 20) && country.isSpecialRate()) {
-                System.out.println(country.getDescriptionUndere20());
+                System.out.print(country.getDescriptionUndere20());
                 statesOver20.add(country.getDescriptionUndere20());
             }
         }
@@ -68,7 +69,7 @@ public class Main {
         System.out.println("Sazba VAT " + minVatValue + "+% : ");
         loading.compareTo();
         List<String> statesOverX = new ArrayList<String>();
-        for (State country : loading.getAllCountries()) {
+        for (State02 country : loading.getAllCountries()) {
             if ((country.getFullTAxValue() > minVatValue)) {
                 System.out.println(country.getDescriptionOver20());
                 statesOverX.add(country.getDescriptionOver20());

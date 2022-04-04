@@ -1,6 +1,6 @@
 package com.engeto;
 
-public class State {
+public class State02 {
 
     public String shortcut;
     public String country;
@@ -9,7 +9,7 @@ public class State {
     public boolean specialRate;
 
 
-    public State(String shortcut, String country, double fullTAxValue, double reducedTaxValue, boolean specialRate){
+    public State02(String shortcut, String country, double fullTAxValue, double reducedTaxValue, boolean specialRate){
         this.shortcut = shortcut;
         this.country = country;
         this.fullTaxValue = fullTAxValue;

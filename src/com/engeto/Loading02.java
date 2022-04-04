@@ -3,11 +3,11 @@ package com.engeto;
 import java.io.*;
 import java.util.*;
 
-public class Loading {
+public class Loading02 {
 
 
-    private List<State> countriesList = new ArrayList<>();
-    private ArrayList<State> countriesListOver20 = new ArrayList<>();
+    private List<State02> countriesList = new ArrayList<>();
+    private ArrayList<State02> countriesListOver20 = new ArrayList<>();
 
 
     public void loadFromFile(String filename, String delimiter) {
@@ -22,7 +22,7 @@ public class Loading {
                 double reducedTaxValue = Double.parseDouble(item3);
                 boolean specialRate = Boolean.parseBoolean(items[4]);
 
-                State state = new State(shortcut, country, fullTax, reducedTaxValue, specialRate);
+                State02 state = new State02(shortcut, country, fullTax, reducedTaxValue, specialRate);
                 countriesList.add(state);
                 countriesListOver20.add(state);
             }
@@ -45,7 +45,7 @@ public class Loading {
                     String country = items[1];
                     String item3 = items[3].replace(",", ".");
                     double reducedTaxValue = Double.parseDouble(item3);
-                    State state = new State(shortcut, country, fullTax, reducedTaxValue, specialRate);
+                    State02 state = new State02(shortcut, country, fullTax, reducedTaxValue, specialRate);
                     countriesListOver20.add(state);
                 } else {
                     System.out.println("=======================================");
@@ -54,7 +54,7 @@ public class Loading {
                     String item3 = items[3].replace(",", ".");
                     double reducedTaxValue = Double.parseDouble(item3);
 
-                    State state = new State(shortcut, country, fullTax, reducedTaxValue, specialRate);
+                    State02 state = new State02(shortcut, country, fullTax, reducedTaxValue, specialRate);
                     countriesList.add(state);
                     countriesListOver20.add(state);
                 }
@@ -69,7 +69,7 @@ public class Loading {
     public void saveToFile(String fileName) {
         String delimetr = "\t";
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
-            for (State s : countriesList) {
+            for (State02 s : countriesList) {
                 String outputLine = s.getShortcut() + delimetr;
                 outputLine += s.getCountry() + delimetr;
                 outputLine += s.getFullTAxValue() + delimetr;
@@ -85,13 +85,13 @@ public class Loading {
     }
 
 
-    public List<State> getAllCountries() {
+    public List<State02> getAllCountries() {
         return new ArrayList<>(countriesList);
     }
 
 
     public void compareTo() {
-        Collections.sort(getAllCountries(), new Compare());
+        Collections.sort(getAllCountries(), new Compare02());
     }
 
 }
